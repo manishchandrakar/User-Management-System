@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.example</groupId>
+    <artifactId>myproject</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <!-- Define packaging as "jar" for a typical Spring Boot project -->
+    <packaging>jar</packaging>
+
+    <properties>
+        <!-- Set Java version -->
+        <java.version>1.8</java.version>
+
+        <!-- Set Spring Boot version -->
+        <spring.boot.version>2.6.3</spring.boot.version>
+    </properties>
+
+    <dependencies>
+        <!-- Spring Boot Starter Web includes Thymeleaf by default -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <version>${spring.boot.version}</version>
+        </dependency>
+
+        <dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-data-jpa</artifactId>
+    <version>${spring.boot.version}</version>
+  </dependency>
+
+
+<!-- H2 Database for testing (optional, you can choose another database) -->
+<dependency>
+    <groupId>com.h2database</groupId>
+    <artifactId>h2</artifactId>
+    <version>your_h2_version_here</version>
+    <scope>runtime</scope>
+</dependency>
+
+
+
+<!-- H2 Database for testing (optional, you can choose another database) -->
+<dependency>
+    <groupId>com.h2database</groupId>
+    <artifactId>h2</artifactId>
+    <version>1.4.200</version>
+    <scope>runtime</scope>
+</dependency>
+
+
+        <!-- Add other dependencies as needed -->
+    </dependencies>
+
+    <!-- Maven Compiler Plugin Configuration -->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
+
+            <!-- Spring Boot Maven Plugin for creating an executable JAR -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${spring.boot.version}</version>
+            </plugin>
+        </plugins>
+    </build>
+</project>
